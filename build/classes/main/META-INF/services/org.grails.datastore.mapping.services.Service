@@ -1,0 +1,4 @@
+tp.grails.$MessageServiceImplementation
+tp.grails.$RecevoirMessageServiceImplementation
+tp.grails.$RencontreServiceImplementation
+tp.grails.$ScoreServiceImplementation

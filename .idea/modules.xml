@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/tp-grails.iml" filepath="$PROJECT_DIR$/tp-grails.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/tp-grails_integrationTest.iml" filepath="$PROJECT_DIR$/.idea/modules/tp-grails_integrationTest.iml" group="tp-grails" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/tp-grails_main.iml" filepath="$PROJECT_DIR$/.idea/modules/tp-grails_main.iml" group="tp-grails" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/tp-grails_test.iml" filepath="$PROJECT_DIR$/.idea/modules/tp-grails_test.iml" group="tp-grails" />
+    </modules>
+  </component>
+</project>
