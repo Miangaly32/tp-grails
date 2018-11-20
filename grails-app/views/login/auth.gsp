@@ -22,6 +22,7 @@
         <p>
             <input class="gameBox__btn" type="submit" id="submit" value="Se connecter"/>
         </p>
+        <p>S'inscire <a href='register'>ici</a> </p>
     </form>
 </div>
 </body>

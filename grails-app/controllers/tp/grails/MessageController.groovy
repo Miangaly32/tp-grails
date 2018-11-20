@@ -88,6 +88,8 @@ class MessageController {
             '*'{ render status: NO_CONTENT }
         }
     }
+
+    @Secured('ROLE_USER')
     def envoyerMessage(){
 
     }

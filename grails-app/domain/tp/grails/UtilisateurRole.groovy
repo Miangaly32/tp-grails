@@ -19,7 +19,7 @@ class UtilisateurRole implements Serializable {
 	@Override
 	boolean equals(other) {
 		if (other instanceof UtilisateurRole) {
-			other.userId == user?.id && other.roleId == role?.id
+			other.user.id == user?.id && other.role.id == role?.id
 		}
 	}
 

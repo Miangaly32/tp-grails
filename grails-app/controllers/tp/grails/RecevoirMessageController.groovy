@@ -1,6 +1,7 @@
 package tp.grails
 
 import grails.validation.ValidationException
+import org.springframework.security.access.annotation.Secured
 
 import static org.springframework.http.HttpStatus.*
 
@@ -87,6 +88,8 @@ class RecevoirMessageController {
             '*'{ render status: NO_CONTENT }
         }
     }
+
+    @Secured('ROLE_USER')
     def messagesRecu(){
 
     }

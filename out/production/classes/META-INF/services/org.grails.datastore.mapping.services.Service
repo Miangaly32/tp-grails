@@ -40,3 +40,4 @@ tp.grails.$RecevoirMessageServiceImplementation
 tp.grails.$RencontreServiceImplementation
 tp.grails.$ScoreServiceImplementation
 tp.grails.$MessageServiceImplementation
+tp.grails.$UtilisateurServiceImplementation

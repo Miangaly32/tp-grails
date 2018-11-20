@@ -15,7 +15,7 @@
         <g:passwordField name="password"/><br/>
         <label>Confirmation mot de passe:</label>
         <g:passwordField name="confirmPassword"/><br/>
-        <g:actionSubmit action="save" value="Save"/>
+        <g:actionSubmit action="save" value="S'inscrire"/>
     </g:form>
 </div>
 </body>
