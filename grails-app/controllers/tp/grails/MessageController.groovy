@@ -2,6 +2,7 @@ package tp.grails
 
 import org.springframework.security.access.annotation.Secured
 import grails.validation.ValidationException
+import java.util.List
 
 import static org.springframework.http.HttpStatus.*
 
@@ -14,6 +15,31 @@ class MessageController {
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
         respond messageService.list(params), model:[messageCount: messageService.count()]
+    }
+    @Secured('ROLE_USER')
+    def envoyerMessage(){
+
+    }
+
+    @Secured('ROLE_USER')
+    def voirMessage(){
+
+    }
+
+    @Secured('ROLE_USER')
+    def boiteReception(){
+        List<RecevoirMessage> listesRecevoirMessage = RecevoirMessage.findAllWhere(destinataire: Utilisateur.get(2))//to be replaced with session
+        List<Message> listesMsgRecu = new ArrayList<Message>()
+        for(RecevoirMessage msgR : listesRecevoirMessage){
+            listesMsgRecu.add(msgR.message)
+        }
+        [listeMsgToRender: listesMsgRecu]
+    }
+
+    @Secured('ROLE_USER')
+    def boiteEnvoi(){
+        List<Message> listesMsgEnvoie = Message.findAllWhere(auteurMessage: Utilisateur.get(2))//to be replaced with session
+        [listeMsgToRender: listesMsgEnvoie]
     }
 
     def show(Long id) {
@@ -87,16 +113,6 @@ class MessageController {
             }
             '*'{ render status: NO_CONTENT }
         }
-    }
-
-    @Secured('ROLE_USER')
-    def envoyerMessage(){
-
-    }
-
-    @Secured('ROLE_USER')
-    def voirMessage(){
-
     }
     protected void notFound() {
         request.withFormat {

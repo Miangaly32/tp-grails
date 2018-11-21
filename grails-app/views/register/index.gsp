@@ -9,13 +9,20 @@
 <div class="gameBox">
     <h1>Inscription</h1>
     <g:form controller="register" >
-        <label>Nom d'utilisateur:</label>
-        <g:textField name="username"/><br/>
-        <label>Mot de passe:</label>
-        <g:passwordField name="password"/><br/>
-        <label>Confirmation mot de passe:</label>
-        <g:passwordField name="confirmPassword"/><br/>
-        <g:actionSubmit action="save" value="S'inscrire"/>
+        <div class="gameBox__input">
+            <label>Nom d'utilisateur:</label>
+            <g:textField name="username" required="true"/>
+        </div>
+        <div class="gameBox__input">
+            <label>Mot de passe:</label>
+            <g:passwordField name="password" required="true"/>
+        </div>
+        <div class="gameBox__input">
+            <label>Confirmer votre mot de passe:</label>
+            <g:passwordField name="confirmPassword" required="true"/>
+        </div>
+        <g:actionSubmit class="gameBox__btn gameBox__btn--submit" action="save" value="S'inscrire"/>
+        <p>Deja membre? <a class="gameBox__btn gameBox__btn--link" href='/login/auth'>Se connecter</a> </p>
     </g:form>
 </div>
 </body>

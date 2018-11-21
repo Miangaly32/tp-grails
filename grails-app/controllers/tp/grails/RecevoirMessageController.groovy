@@ -89,10 +89,6 @@ class RecevoirMessageController {
         }
     }
 
-    @Secured('ROLE_USER')
-    def messagesRecu(){
-
-    }
     protected void notFound() {
         request.withFormat {
             form multipartForm {

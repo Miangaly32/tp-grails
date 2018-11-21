@@ -17,7 +17,9 @@
         <div class="gameBox__header">
             <h2>Bienvenue, {nom}</h2>
         </div>
-        <a class="gameBox__btn gameBox__btn--large" href="#">COMMENCER A JOUER</a>
+        <g:form controller="jouer" action="jouer" >
+            <g:actionSubmit class="gameBox__btn gameBox__btn--large" action="jouer" value="COMMENCER A JOUER"/>
+        </g:form>
         <p style="text-align: center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
     </div>
 </body>

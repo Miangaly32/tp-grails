@@ -1,9 +1,6 @@
 package tp.grails
 
 import grails.validation.ValidationException
-import org.springframework.security.access.annotation.Secured
-
-import static org.springframework.http.HttpStatus.*
 
 class RencontreController {
 
@@ -99,13 +96,5 @@ class RencontreController {
         }
     }
 
-    @Secured('ROLE_USER')
-    def jouer(){
 
-    }
-
-    @Secured('ROLE_USER')
-    def resultatsRencontre(){
-
-    }
 }

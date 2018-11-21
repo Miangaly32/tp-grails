@@ -16,10 +16,10 @@
     <div class="gameMenu">
         <ul>
             <li>
-                <a href="#" class="gameBox__btn gameBox__btn--menu active">Jouer</a>
+                <g:link href="/jouer/" class="gameBox__btn gameBox__btn--menu active">Jouer</g:link>
             </li>
             <li>
-                <a href="#" class="gameBox__btn gameBox__btn--menu">Messages</a>
+                <a href="/message/" class="gameBox__btn gameBox__btn--menu">Messages</a>
             </li>
             <li>
                 <a href="#" class="gameBox__btn gameBox__btn--menu">Mon Profil</a>
