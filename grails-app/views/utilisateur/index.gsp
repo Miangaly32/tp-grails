@@ -1,28 +1,25 @@
-<!DOCTYPE html>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <html>
-    <head>
-        <meta name="layout" content="main" />
-        <g:set var="entityName" value="${message(code: 'utilisateur.label', default: 'Utilisateur')}" />
-        <title><g:message code="default.list.label" args="[entityName]" /></title>
-    </head>
-    <body>
-        <a href="#list-utilisateur" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-        <div class="nav" role="navigation">
-            <ul>
-                <li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-                <li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
-            </ul>
-        </div>
-        <div id="list-utilisateur" class="content scaffold-list" role="main">
-            <h1><g:message code="default.list.label" args="[entityName]" /></h1>
-            <g:if test="${flash.message}">
-                <div class="message" role="status">${flash.message}</div>
-            </g:if>
-            <f:table collection="${utilisateurList}" />
+<head>
+    <meta name="layout" content="main"/>
+    <title>Bienvenue</title>
+</head>
 
-            <div class="pagination">
-                <g:paginate total="${utilisateurCount ?: 0}" />
-            </div>
-        </div>
-    </body>
+<body>
+<div class="gameBox">
+    <div class="gameBox__header">
+        <h2>Bienvenue ${user.username}</h2>
+    </div>
+    <g:form controller="utilisateur">
+        <label>Nom d'utilisateur:</label>
+        <g:textField name="username" value="${user.username}"/><br/>
+        <label>Mot de passe:</label>
+        <g:passwordField name="password" /><br/>
+        <label>Confirmation mot de passe:</label>
+        <g:passwordField name="confirmPassword"/><br/>
+        <g:actionSubmit action="save" value="Sauvegarder"/>
+    </g:form>
+</div>
+</body>
 </html>
+

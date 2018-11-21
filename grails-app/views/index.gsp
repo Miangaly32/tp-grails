@@ -10,33 +10,15 @@
 <head>
     <meta name="layout" content="main"/>
     <title>Bienvenue</title>
-    <asset:stylesheet src="application.css"/>
 </head>
 
 <body>
-
-    <div class="gameBox">
-            <ul>
-                <li>
-                    <g:link controller="message">Message</g:link>
-                </li>
-                <li>
-                    <g:link controller="recevoirMessage">Recevoir Message</g:link>
-                </li>
-                <li>
-                    <g:link controller="rencontre">Rencontre</g:link>
-                </li>
-                <li>
-                    <g:link controller="role">Role</g:link>
-                </li>
-                <li>
-                    <g:link controller="score">Score</g:link>
-                </li>
-                <li>
-                    <g:link controller="utilisateur">Utilisateurs</g:link>
-                </li>
-            </ul>
+<div class="gameBox">
+    <div class="gameBox__header">
+        <h2>Bienvenue</h2>
     </div>
-
+    <a class="gameBox__btn gameBox__btn--large" href="rencontre/jouer">COMMENCER A JOUER</a>
+    <p style="text-align: center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+</div>
 </body>
 </html>

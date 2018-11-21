@@ -43,7 +43,7 @@ class UtilisateurRole implements Serializable {
 		DetachedCriteria crit = UtilisateurRole.where {
 			user == Utilisateur.load(u.id)
 		}
-		def reps = crit.get()
+		crit.get()
 	}
 
 	static boolean exists(long userId, long roleId) {
