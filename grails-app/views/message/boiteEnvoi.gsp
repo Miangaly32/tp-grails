@@ -24,8 +24,8 @@
             </g:if>
             <g:each in="${listeMsgToRender}" var="msg">
                 <li>
-                    <a class=""><span>de:</span>${msg.auteurMessage.username}</a>
-                    <p class="">${msg.contenuMessage}</p>
+                    <a class="read"><span>de:</span>${msg.auteurMessage.username}</a>
+                    <p class="read">${msg.contenuMessage}</p>
                 </li>
             </g:each>
         </ul>

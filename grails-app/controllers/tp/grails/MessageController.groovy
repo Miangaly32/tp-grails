@@ -9,6 +9,7 @@ import static org.springframework.http.HttpStatus.*
 class MessageController {
 
     MessageService messageService
+    MessageImplService messageImplService
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
@@ -18,7 +19,16 @@ class MessageController {
     }
     @Secured('ROLE_USER')
     def envoyerMessage(){
+        def listeDestinataire = messageImplService.getListeDestinataire(3)
+        render(view: "envoyerMessage",model: [listeDestToRender: listeDestinataire])
+    }
 
+    @Secured('ROLE_USER')
+    def envoi(){
+        def contenuMessage = params["contenuMessage"]
+        int destinataire = params["destinataire"] as Integer
+        messageImplService.ecrireMessage(contenuMessage,3,destinataire)
+        redirect action: "boiteEnvoi"
     }
 
     @Secured('ROLE_USER')
@@ -28,7 +38,7 @@ class MessageController {
 
     @Secured('ROLE_USER')
     def boiteReception(){
-        List<RecevoirMessage> listesRecevoirMessage = RecevoirMessage.findAllWhere(destinataire: Utilisateur.get(2))//to be replaced with session
+        List<RecevoirMessage> listesRecevoirMessage = RecevoirMessage.findAllWhere(destinataire: Utilisateur.get(3))//to be replaced with session
         List<Message> listesMsgRecu = new ArrayList<Message>()
         for(RecevoirMessage msgR : listesRecevoirMessage){
             listesMsgRecu.add(msgR.message)
@@ -38,7 +48,7 @@ class MessageController {
 
     @Secured('ROLE_USER')
     def boiteEnvoi(){
-        List<Message> listesMsgEnvoie = Message.findAllWhere(auteurMessage: Utilisateur.get(2))//to be replaced with session
+        List<Message> listesMsgEnvoie = Message.findAllWhere(auteurMessage: Utilisateur.get(3))//to be replaced with session
         [listeMsgToRender: listesMsgEnvoie]
     }
 

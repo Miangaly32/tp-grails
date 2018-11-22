@@ -95,6 +95,4 @@ class RencontreController {
             '*'{ render status: NOT_FOUND }
         }
     }
-
-
 }

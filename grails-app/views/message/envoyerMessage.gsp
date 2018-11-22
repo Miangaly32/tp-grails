@@ -14,18 +14,21 @@
 
 <body>
     <div class="gameBox">
-        <form class="gameBox__form">
+        <g:form class="gameBox__form" action="envoi" controller="message">
             <div class="gameBox__input">
-                <label for="inputText">Destinataire: </label>
-                <input id="inputText" type="text" placeholder="Taper le nom du joueur" />
+                <label for="destinataire">Destinataire: </label>
+                <g:select id="destinataire" name='destinataire'
+                          noSelection="${['null':'Selectionner un destinataire...']}"
+                          from='${listeDestToRender}'
+                          optionKey="id" optionValue="username" required="true" />
             </div>
             <div class="gameBox__input">
-                <textarea id="inputTextArea" placeholder="Ecrivez votre message ici..." style="margin: 0px; width: 326px; height: 200px;"></textarea>
+                <textarea name="contenuMessage" id="inputTextArea" placeholder="Ecrivez votre message ici..." style="margin: 0px; width: 326px; height: 200px;"></textarea>
             </div>
             <div class="gameBox__input submit">
-                <button type="submit" class="gameBox__btn gameBox__btn--submit">Envoyer</button>
+                <g:submitButton name="envoie" class="gameBox__btn gameBox__btn--submit" value="Envoyer"/>
             </div>
-        </form>
+        </g:form>
         <a class="gameBox__btn" href="#">Boite de reception</a>
     </div>
 </body>

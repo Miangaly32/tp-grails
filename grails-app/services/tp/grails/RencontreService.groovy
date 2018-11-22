@@ -14,5 +14,4 @@ interface RencontreService {
     void delete(Serializable id)
 
     Rencontre save(Rencontre rencontre)
-
 }
