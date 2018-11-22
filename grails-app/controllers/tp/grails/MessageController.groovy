@@ -19,7 +19,7 @@ class MessageController {
     }
     @Secured('ROLE_USER')
     def envoyerMessage(){
-        def listeDestinataire = messageImplService.getListeDestinataire(3)
+        def listeDestinataire = messageImplService.getListeDestinataire(messageImplService.getLoggedUser())
         render(view: "envoyerMessage",model: [listeDestToRender: listeDestinataire])
     }
 
@@ -27,28 +27,29 @@ class MessageController {
     def envoi(){
         def contenuMessage = params["contenuMessage"]
         int destinataire = params["destinataire"] as Integer
-        messageImplService.ecrireMessage(contenuMessage,3,destinataire)
+        messageImplService.ecrireMessage(contenuMessage,messageImplService.getLoggedUser(),destinataire)
         redirect action: "boiteEnvoi"
     }
 
     @Secured('ROLE_USER')
     def voirMessage(){
-
+        def id = params['idMsg']
+        MessageLuJob.triggerNow([id:id])
+        def message = Message.get(id)
+        render(view: "voirMessage",model: [message: message])
     }
 
     @Secured('ROLE_USER')
     def boiteReception(){
-        List<RecevoirMessage> listesRecevoirMessage = RecevoirMessage.findAllWhere(destinataire: Utilisateur.get(3))//to be replaced with session
-        List<Message> listesMsgRecu = new ArrayList<Message>()
-        for(RecevoirMessage msgR : listesRecevoirMessage){
-            listesMsgRecu.add(msgR.message)
-        }
+        Utilisateur uConnecter = messageImplService.getLoggedUser()
+        List<Message> listesMsgRecu = messageImplService.getListeMessageRecu(uConnecter)
         [listeMsgToRender: listesMsgRecu]
     }
 
     @Secured('ROLE_USER')
     def boiteEnvoi(){
-        List<Message> listesMsgEnvoie = Message.findAllWhere(auteurMessage: Utilisateur.get(3))//to be replaced with session
+        Utilisateur uConnecter = messageImplService.getLoggedUser()
+        List<Message> listesMsgEnvoie = messageImplService.getListeMessageEnvoie(uConnecter)
         [listeMsgToRender: listesMsgEnvoie]
     }
 
