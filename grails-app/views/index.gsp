@@ -17,7 +17,7 @@
     <div class="gameBox__header">
         <h2>Bienvenue</h2>
     </div>
-    <a class="gameBox__btn gameBox__btn--large" href="rencontre/jouer">COMMENCER A JOUER</a>
+    <a class="gameBox__btn gameBox__btn--large" href="jouer/jouer">COMMENCER A JOUER</a>
     <p style="text-align: center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 </div>
 </body>

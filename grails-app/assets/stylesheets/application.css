@@ -96,15 +96,19 @@ body{
 .gameBox__message ul{
     list-style: none;
 }
-.gameBox__message ul li p,
-.gameBox__message ul li a{
+.gameBox__message ul a{
     font-weight: 600;
     text-decoration: none;
 }
-.gameBox__message ul li.read p,
-.gameBox__message ul li.read a{
-    font-weight: 400;
+.gameBox__message ul a.read{
+    font-weight: lighter;
     text-decoration: none;
+}
+.gameBox__message ul a li p{
+    color: #000;
+}
+.gameBox__message ul a.read li p{
+   color: #9d9d9d;
 }
 .gameBox__message ul li{
     padding: 16px 0;
@@ -185,6 +189,12 @@ body{
 }
 .contentMessage{
     text-align: center;
+}
+.messageInbox {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 150px;
 }
 button.gameBox__btn {
     border: 0;

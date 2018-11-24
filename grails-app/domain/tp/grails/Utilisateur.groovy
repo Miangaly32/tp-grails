@@ -16,6 +16,7 @@ class Utilisateur implements Serializable {
     String username
     String password
     String confirmPassword
+    String featuredImageUrl
     boolean enabled = true
     boolean accountExpired
     boolean accountLocked

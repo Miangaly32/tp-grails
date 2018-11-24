@@ -5,6 +5,7 @@ class Message {
     String contenuMessage
     Boolean flagLu
     Utilisateur auteurMessage
+    Utilisateur destinataire
 
     static belongsTo = [RecevoirMessage]
 
@@ -12,6 +13,7 @@ class Message {
         dateMessage nullable: false, blank: false
         contenuMessage nullable: false, blank: true
         auteurMessage nullable: false
+        destinataire nullable: false
     }
     static mapping = {
         id column:  'idMessage'

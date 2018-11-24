@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta name="layout" content="main"/>
-    <title>Bienvenue</title>
+    <title>Profil</title>
 </head>
 
 <body>
@@ -10,15 +10,20 @@
     <div class="gameBox__header">
         <h2>Bienvenue ${user.username}</h2>
     </div>
-    <g:form controller="utilisateur">
+    <g:uploadForm  controller="utilisateur">
+        <g:if test="${user.featuredImageUrl}">
+            <img src="${cdnRootUrl}/${cdnFolder}/${user.featuredImageUrl}" width="100"/>
+        </g:if>
+        <input type="file" name="featuredImageFile" />
+        <br>
         <label>Nom d'utilisateur:</label>
         <g:textField name="username" value="${user.username}"/><br/>
-        <label>Mot de passe:</label>
-        <g:passwordField name="password" /><br/>
-        <label>Confirmation mot de passe:</label>
-        <g:passwordField name="confirmPassword"/><br/>
+        <g:hiddenField name="id" value="${user.id}" />
+        <g:hiddenField name="version" value="${user.version}" />
+
+
         <g:actionSubmit action="save" value="Sauvegarder"/>
-    </g:form>
+    </g:uploadForm >
 </div>
 </body>
 </html>

@@ -16,16 +16,16 @@
     <div class="gameMenu">
         <ul>
             <li>
-                <g:link href="/jouer/" class="gameBox__btn gameBox__btn--menu active">Jouer</g:link>
+                <g:link href="/" class="gameBox__btn gameBox__btn--menu active">Jouer</g:link>
             </li>
             <li>
-                <a href="/message/" class="gameBox__btn gameBox__btn--menu">Messages</a>
+                <a href="/message/boiteReception" class="gameBox__btn gameBox__btn--menu">Messages</a>
             </li>
             <li>
-                <a href="#" class="gameBox__btn gameBox__btn--menu">Mon Profil</a>
+                <a href="/utilisateur" class="gameBox__btn gameBox__btn--menu">Mon Profil</a>
             </li>
             <li>
-                <a href="#" class="gameBox__btn gameBox__btn--menu">Se deconnecter</a>
+               <!-- <a href="/logout" class="gameBox__btn gameBox__btn--menu">--><g:link class="gameBox__btn gameBox__btn--menu" controller="logout">Se deconnecter</g:link>
             </li>
         </ul>
     </div>
