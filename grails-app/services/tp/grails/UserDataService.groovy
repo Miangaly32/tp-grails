@@ -16,7 +16,7 @@ interface UserDataService {
 
     Utilisateur save(String username)
 
-    Utilisateur updateName(Serializable id, Long version, String username)
+   // Utilisateur updateUsername(Serializable id, Long version, String username)
 
     Utilisateur updateFeaturedImageUrl(Serializable id, Long version, String featuredImageUrl)
 }

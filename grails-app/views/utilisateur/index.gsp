@@ -21,7 +21,6 @@
         <g:hiddenField name="id" value="${user.id}" />
         <g:hiddenField name="version" value="${user.version}" />
 
-
         <g:actionSubmit action="save" value="Sauvegarder"/>
     </g:uploadForm >
 </div>

@@ -32,7 +32,8 @@ class UploadUserFeaturedImageService implements GrailsConfigurationAware {
         cmd.featuredImageFile.transferTo(new File(path))
 
         String featuredImageUrl = "${filename}"
-        Utilisateur utilisateur = userDataService.updateFeaturedImageUrl(cmd.id, cmd.version, featuredImageUrl)
+
+        Utilisateur utilisateur = userDataService.updateFeaturedImageUrl(cmd.id, cmd.version,featuredImageUrl)
 
         if ( !utilisateur || utilisateur.hasErrors() ) {
             File f = new File(path)
