@@ -15,7 +15,7 @@ class MessageImplService {
     def ecrireMessage(String contenuMessage,Utilisateur auteur, int idDestinataire){
         Utilisateur destinataire = Utilisateur.get(idDestinataire)
         def messageEcrit = new Message(dateMessage: new Date(),flagLu: false,contenuMessage: contenuMessage,auteurMessage: auteur,destinataire: destinataire)
-        messageService.save(messageEcrit)
+        return messageService.save(messageEcrit)
     }
     def getListeDestinataire(Utilisateur connecter){
         List<Utilisateur> utilisateurs = Utilisateur.executeQuery('from Utilisateur u' +

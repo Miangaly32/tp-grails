@@ -5,13 +5,16 @@ import org.springframework.security.access.annotation.Secured
 class JouerController {
 
     def jeuService
+    MessageImplService messageImplService
 
     @Secured('ROLE_USER')
-    def index() { }
+    def index() {
+        render(view: "index", model: [utilisateur: messageImplService.getLoggedUser()])
+    }
 
     @Secured('ROLE_USER')
     def jouer(){
-        List<Score> listScore = jeuService.jouer(Utilisateur.findById(2))
+        List<Score> listScore = jeuService.jouer(messageImplService.getLoggedUser())
         chain(action: "resultatsRencontre", model: [scoreJoueur1: listScore.get(0),scoreJoueur2: listScore.get(1)])
     }
 

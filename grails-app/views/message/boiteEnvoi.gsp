@@ -30,7 +30,7 @@
             </g:each>
         </ul>
     </div>
-    <a class="gameBox__btn" href="#">Ecrire un message</a>
+    <a class="gameBox__btn" href="envoyerMessage">Ecrire un message</a>
 </div>
 </body>
 </html>

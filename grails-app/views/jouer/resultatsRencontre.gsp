@@ -30,7 +30,7 @@
             </div>
         </div>
         <p style="text-align: center">Le gagnant est <strong>${scoreJoueur1ToRender.estGagnant ? scoreJoueur1ToRender.joueur.username : scoreJoueur2ToRender.joueur.username }</strong>.</p>
-        <a class="gameBox__btn" href="#">Jouer a nouveau</a>
+        <a class="gameBox__btn" href="index">Jouer a nouveau</a>
     </div>
 </body>
 </html>

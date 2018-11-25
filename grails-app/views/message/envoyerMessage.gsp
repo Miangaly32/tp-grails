@@ -29,7 +29,7 @@
                 <g:submitButton name="envoie" class="gameBox__btn gameBox__btn--submit" value="Envoyer"/>
             </div>
         </g:form>
-        <a class="gameBox__btn" href="#">Boite de reception</a>
+        <a class="gameBox__btn" href="boiteReception">Boite de reception</a>
     </div>
 </body>
 </html>

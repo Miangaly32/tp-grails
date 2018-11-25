@@ -15,7 +15,7 @@
 <body>
     <div class="gameBox">
         <div class="gameBox__header">
-            <h2>Bienvenue, {nom}</h2>
+            <h2>Bienvenue, ${utilisateur.username}</h2>
         </div>
         <g:form controller="jouer" action="jouer" >
             <g:actionSubmit class="gameBox__btn gameBox__btn--large" action="jouer" value="COMMENCER A JOUER"/>
