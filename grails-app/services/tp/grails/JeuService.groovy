@@ -29,4 +29,9 @@ class JeuService {
         }
         [scoreJoueur1,scoreJoueur2]
     }
+
+    def getScoreByRencontre(Long id){
+        Rencontre rencontre = Rencontre.findById(id)
+        Score.findAllByRencontre(rencontre)
+    }
 }

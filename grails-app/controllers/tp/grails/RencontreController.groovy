@@ -1,20 +1,25 @@
 package tp.grails
 
 import grails.validation.ValidationException
+import org.springframework.security.access.annotation.Secured
 
 class RencontreController {
 
     RencontreService rencontreService
+    JeuService jeuService
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
+    @Secured('ROLE_ADMIN')
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
         respond rencontreService.list(params), model:[rencontreCount: rencontreService.count()]
     }
 
+    @Secured('ROLE_ADMIN')
     def show(Long id) {
-        respond rencontreService.get(id)
+        //respond rencontreService.get(id)
+        [score:jeuService.getScoreByRencontre(id)]
     }
 
     def create() {
@@ -69,6 +74,7 @@ class RencontreController {
         }
     }
 
+    @Secured('ROLE_ADMIN')
     def delete(Long id) {
         if (id == null) {
             notFound()

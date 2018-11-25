@@ -17,6 +17,7 @@ class MessageController {
         params.max = Math.min(max ?: 10, 100)
         respond messageService.list(params), model:[messageCount: messageService.count()]
     }
+
     @Secured('ROLE_USER')
     def envoyerMessage(){
         def listeDestinataire = messageImplService.getListeDestinataire(messageImplService.getLoggedUser())
