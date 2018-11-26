@@ -29,9 +29,22 @@ class JeuService {
         }
         [scoreJoueur1,scoreJoueur2]
     }
+<<<<<<< HEAD
 
     def getScoreByRencontre(Long id){
         Rencontre rencontre = Rencontre.findById(id)
         Score.findAllByRencontre(rencontre)
+=======
+    def getListeRencontre(Utilisateur connecter){
+        List<Score> listOfScoresJoueur1 = Score.findAllWhere(joueur: connecter)
+        List<Rencontre> rencontreList
+        for(Score scorejoueur1 : listOfScoresJoueur1 ){
+            rencontreList.add(scorejoueur1.rencontre)
+        }
+        List<Score>
+        if(!rencontreList.isEmpty()){
+
+        }
+>>>>>>> master
     }
 }
