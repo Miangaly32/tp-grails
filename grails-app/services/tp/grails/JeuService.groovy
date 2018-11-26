@@ -29,22 +29,10 @@ class JeuService {
         }
         [scoreJoueur1,scoreJoueur2]
     }
-<<<<<<< HEAD
-
-    def getScoreByRencontre(Long id){
-        Rencontre rencontre = Rencontre.findById(id)
-        Score.findAllByRencontre(rencontre)
-=======
-    def getListeRencontre(Utilisateur connecter){
-        List<Score> listOfScoresJoueur1 = Score.findAllWhere(joueur: connecter)
-        List<Rencontre> rencontreList
-        for(Score scorejoueur1 : listOfScoresJoueur1 ){
-            rencontreList.add(scorejoueur1.rencontre)
-        }
-        List<Score>
-        if(!rencontreList.isEmpty()){
-
-        }
->>>>>>> master
+    def listeResultatsRencontre(Utilisateur connecter){
+        int idconnecter = (connecter.id).toInteger()
+        List<Resultat> resultatList = Resultat.executeQuery("select r from Resultat r where r.idGagnant = :idconnecter" +
+                " or r.idPerdant = :idconnecter order by r.date_rencontre desc",[idconnecter:idconnecter],[max: 4])
+        return resultatList
     }
 }

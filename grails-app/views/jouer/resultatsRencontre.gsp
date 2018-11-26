@@ -31,13 +31,14 @@
         <p style="text-align: center">Le gagnant de cette rencontre est <strong>${scoreJoueur1ToRender.estGagnant ? scoreJoueur1ToRender.joueur.username : scoreJoueur2ToRender.joueur.username }</strong>.</p>
 
         <div class="gameBox__header">
-            <h5>Vos rencontres récents</h5>
+            <h5>Vos rencontres récentes</h5>
         </div>
         <div>
-            <span class="result-player-list winner-list">{joueur1} {score}</span> -  <span>{joueur1} {score}</span><br/>
-            {joueur1} {score} - {joueur2} {score} <br/>
+            <g:each var="resultat" in="${resultatList}">
+                <strong><g:formatDate date="${resultat.date_rencontre}" type="datetime" style="MEDIUM"/></strong><br/>
+                <span class="result-player-list winner-list">${resultat.gagnant} ${resultat.scoreGagnant}</span> -  <span>${resultat.perdant} ${resultat.scorePerdant}</span><br/>
+            </g:each>
         </div>
-
         <a class="gameBox__btn" href="index">Jouer a nouveau</a>
     </div>
 </body>

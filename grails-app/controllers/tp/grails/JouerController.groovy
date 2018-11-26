@@ -22,6 +22,7 @@ class JouerController {
     def resultatsRencontre(){
         def scoreJoueur1 = chainModel['scoreJoueur1']
         def scoreJoueur2 = chainModel['scoreJoueur2']
-        render(view: "/jouer/resultatsRencontre",model: [scoreJoueur1ToRender: scoreJoueur1,scoreJoueur2ToRender: scoreJoueur2])
+        List<Resultat> resultatList = jeuService.listeResultatsRencontre(messageImplService.getLoggedUser())
+        render(view: "/jouer/resultatsRencontre",model: [scoreJoueur1ToRender: scoreJoueur1,scoreJoueur2ToRender: scoreJoueur2,resultatList:resultatList])
     }
 }
