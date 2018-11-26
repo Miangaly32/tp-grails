@@ -23,10 +23,12 @@
                 Il n'y a pas de message disponible pour le moment.
             </g:if>
             <g:each in="${listeMsgToRender}" var="msg">
+                <g:link controller="message" action="show" params="${[idMsg: msg.id]}" class="read">
                 <li>
-                    <a class="read"><span>a: </span>${msg.destinataire.username}</a>
+                    <span>a: </span>${msg.destinataire.username}
                     <p class="messageInbox">${msg.contenuMessage}</p>
                 </li>
+                </g:link>
             </g:each>
         </ul>
     </div>

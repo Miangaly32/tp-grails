@@ -35,9 +35,11 @@ class MessageController {
     @Secured('ROLE_USER')
     def voirMessage(){
         def id = params['idMsg']
-        MessageLuJob.triggerNow([id:id])
         def message = Message.get(id)
-        render(view: "voirMessage",model: [message: message])
+        if(message.destinataire.id == messageImplService.getLoggedUser().id || message.auteurMessage.id == messageImplService.getLoggedUser().id){
+            MessageLuJob.triggerNow([id:id])
+            render(view: "voirMessage",model: [message: message])
+        }
     }
 
     @Secured('ROLE_USER')
@@ -54,7 +56,9 @@ class MessageController {
         [listeMsgToRender: listesMsgEnvoie]
     }
 
-    def show(Long id) {
+    @Secured('ROLE_USER')
+    def show() {
+        def id = params['idMsg']
         respond messageService.get(id)
     }
 

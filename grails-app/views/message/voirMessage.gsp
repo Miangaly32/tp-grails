@@ -9,7 +9,7 @@
 <html>
 <head>
     <meta name="layout" content="main"/>
-    <title>Message de {nomAuteur}</title>
+    <title>Message de ${message.destinataire.username}</title>
 </head>
 
 <body>
