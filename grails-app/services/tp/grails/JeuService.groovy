@@ -29,4 +29,15 @@ class JeuService {
         }
         [scoreJoueur1,scoreJoueur2]
     }
+    def getListeRencontre(Utilisateur connecter){
+        List<Score> listOfScoresJoueur1 = Score.findAllWhere(joueur: connecter)
+        List<Rencontre> rencontreList
+        for(Score scorejoueur1 : listOfScoresJoueur1 ){
+            rencontreList.add(scorejoueur1.rencontre)
+        }
+        List<Score>
+        if(!rencontreList.isEmpty()){
+
+        }
+    }
 }

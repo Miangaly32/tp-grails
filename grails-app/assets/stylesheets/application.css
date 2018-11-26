@@ -86,6 +86,9 @@ body{
     border: 2px solid #e5f0ff;
     border-radius: 50%;
 }
+.result-player-list.winner-list{
+    border-bottom: 5px dashed #4cae4c;
+}
 .result-player span{
     display: block;
 }

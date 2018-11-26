@@ -15,10 +15,9 @@
 <body>
     <div class="gameBox">
         <div class="gameBox__header">
-            <h2>Resultats des Jeux </h2>
+            <h1>Resultats des Jeux </h1>
         </div>
         <div class="gameBox__result">
-
             <div class="result-player ${scoreJoueur1ToRender.estGagnant ? 'winner' : ''}">
                 <span>${scoreJoueur1ToRender.joueur.username}</span>
                 <span>${scoreJoueur1ToRender.scoreJoueur}</span>
@@ -29,7 +28,16 @@
                 <span>${scoreJoueur2ToRender.scoreJoueur}</span>
             </div>
         </div>
-        <p style="text-align: center">Le gagnant est <strong>${scoreJoueur1ToRender.estGagnant ? scoreJoueur1ToRender.joueur.username : scoreJoueur2ToRender.joueur.username }</strong>.</p>
+        <p style="text-align: center">Le gagnant de cette rencontre est <strong>${scoreJoueur1ToRender.estGagnant ? scoreJoueur1ToRender.joueur.username : scoreJoueur2ToRender.joueur.username }</strong>.</p>
+
+        <div class="gameBox__header">
+            <h5>Vos rencontres récents</h5>
+        </div>
+        <div>
+            <span class="result-player-list winner-list">{joueur1} {score}</span> -  <span>{joueur1} {score}</span><br/>
+            {joueur1} {score} - {joueur2} {score} <br/>
+        </div>
+
         <a class="gameBox__btn" href="index">Jouer a nouveau</a>
     </div>
 </body>
